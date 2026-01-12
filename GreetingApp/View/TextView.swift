@@ -17,10 +17,10 @@ struct TextView: View {
             .font(.largeTitle)
             .fontWeight(.thin)
             .padding()
-            .background(.red.opacity(colorOpacity))
+            .background(.myRed.opacity(colorOpacity))
             .cornerRadius(5)
             .shadow(
-                color: .red,
+                color: .myRed,
                 radius: 5,
                 x: 10,
                 y: 10
