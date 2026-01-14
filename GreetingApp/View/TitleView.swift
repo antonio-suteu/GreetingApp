@@ -8,22 +8,21 @@
 import SwiftUI
 
 struct TitleView: View {
-    
     // State vars
     @State private var isRotated: Bool = true
     @State private var subtitle = "— Exploring iOS Programming —"
     let subtitles: [String] = [
-        "— Learning to make napalm —",
+        "— Making napalm at home —",
         "— Exploring the wilderness —",
-        "— Wearning socks with sandals —",
-        "— Feeling existential dread —"
+        "— Wearing socks with sandals —",
+        "— Feeling existential dread —",
     ]
-    
+
     // computed property
     var angle: Angle {
         isRotated ? .zero : Angle.degrees(180)
     }
-    
+
     var body: some View {
         Image(systemName: "face.dashed")
             .font(.system(size: 60))
@@ -38,7 +37,12 @@ struct TitleView: View {
             .fontWeight(.semibold)
             .fontDesign(.monospaced)
             .onTapGesture {
-                subtitle = subtitles.randomElement() ?? subtitle
+                var randomPick: String = subtitles.randomElement() ?? ""
+                while randomPick == subtitle {
+                    randomPick = subtitles.randomElement() ?? ""
+                }
+
+                subtitle = randomPick
             }
             .padding()
     }
