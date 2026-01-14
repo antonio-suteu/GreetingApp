@@ -1,15 +1,13 @@
-//
-//  TextView.swift
-//  GreetingApp
-//
-//  Created by Antonio Suteu on 11/01/26.
-//
-
 import SwiftUI
 
+/// A view that displays text with a colored background shadow effect.
+/// The view applies a red background with adjustable opacity and a matching shadow.
 struct TextView: View {
+    /// The text content to display.
     let displayText: String
-    // @State lets me change the variable in the 'onTapGesture'
+    
+    /// The opacity of the background color, ranging from 0.0 (transparent) to 1.0 (opaque).
+    /// This value changes to 0 when the view is tapped, creating a fade-out effect.
     @State var colorOpacity: Double
 
     var body: some View {

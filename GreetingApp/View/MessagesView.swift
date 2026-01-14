@@ -1,13 +1,11 @@
-//
-//  MessageView.swift
-//  GreetingApp
-//
-//  Created by Antonio Suteu on 11/01/26.
-//
-
 import SwiftUI
 
+/// A view that displays a collection of greeting messages.
+///
+/// This view creates a vertical list of `TextView` instances, each displaying
+/// a different message with varying background opacity levels.
 struct MessagesView: View {
+    /// The collection of messages to display, each containing text and opacity settings.
     let messages: [DataItemModel] = [
         .init(
             text: "Greetings",

@@ -1,16 +1,33 @@
-//
-//  TitleView.swift
-//  GreetingApp
-//
-//  Created by Antonio Suteu on 11/01/26.
-//
-
 import SwiftUI
 
+/// A view that displays an interactive title section with a rotating icon and a randomizable subtitle.
+///
+/// `TitleView` presents a dashed face SF Symbol that rotates 180 degrees when tapped,
+/// along with a subtitle that cycles through different humorous messages when tapped.
+///
+/// ## Features
+/// - Animated rotation of the face icon
+/// - Random subtitle selection from a predefined list
+/// - Tap gestures for interaction
+///
+/// ## Example
+/// ```swift
+/// var body: some View {
+///     VStack {
+///         TitleView()
+///     }
+/// }
+/// ```
 struct TitleView: View {
-    // State vars
+    // MARK: - State Properties
+    
+    /// Tracks whether the face icon is in its original orientation or rotated 180 degrees.
     @State private var isRotated: Bool = true
+    
+    /// The currently displayed subtitle text.
     @State private var subtitle = "— Exploring iOS Programming —"
+    
+    /// A collection of possible subtitles that can be randomly selected.
     let subtitles: [String] = [
         "— Making napalm at home —",
         "— Exploring the wilderness —",
@@ -18,12 +35,19 @@ struct TitleView: View {
         "— Feeling existential dread —",
     ]
 
-    // computed property
+    // MARK: - Computed Properties
+    
+    /// Returns the rotation angle based on the current rotation state.
+    ///
+    /// - Returns: `.zero` when not rotated, or 180 degrees when rotated.
     var angle: Angle {
         isRotated ? .zero : Angle.degrees(180)
     }
 
+    // MARK: - Body
+    
     var body: some View {
+        // Face icon that rotates when tapped
         Image(systemName: "face.dashed")
             .font(.system(size: 60))
             .rotationEffect(angle)
@@ -33,10 +57,12 @@ struct TitleView: View {
                 }
             }
 
+        // Subtitle text that randomizes when tapped
         Text(subtitle)
             .fontWeight(.semibold)
             .fontDesign(.monospaced)
             .onTapGesture {
+                // Select a random subtitle that's different from the current one
                 var randomPick: String = subtitles.randomElement() ?? ""
                 while randomPick == subtitle {
                     randomPick = subtitles.randomElement() ?? ""
@@ -47,6 +73,8 @@ struct TitleView: View {
             .padding()
     }
 }
+
+// MARK: - Previews
 
 #Preview {
     TitleView()

@@ -1,12 +1,6 @@
-//
-//  BackgroundView.swift
-//  GreetingApp
-//
-//  Created by Antonio Suteu on 11/01/26.
-//
-
 import SwiftUI
 
+/// This is the background view which contains a linear gradient
 struct BackgroundView: View {
     var body: some View {
         LinearGradient(
