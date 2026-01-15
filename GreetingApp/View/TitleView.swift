@@ -25,10 +25,10 @@ struct TitleView: View {
     @State private var isRotated: Bool = true
     
     /// The currently displayed subtitle text.
-    @State private var subtitle = "— Exploring iOS Programming —"
+    @State private var subtitle: LocalizedStringKey = "— Exploring iOS Programming —"
     
     /// A collection of possible subtitles that can be randomly selected.
-    let subtitles: [String] = [
+    let subtitles: [LocalizedStringKey] = [
         "— Making napalm at home —",
         "— Exploring the wilderness —",
         "— Wearing socks with sandals —",
@@ -63,9 +63,9 @@ struct TitleView: View {
             .fontDesign(.monospaced)
             .onTapGesture {
                 // Select a random subtitle that's different from the current one
-                var randomPick: String = subtitles.randomElement() ?? ""
+                var randomPick: LocalizedStringKey = subtitles.randomElement() ?? subtitle
                 while randomPick == subtitle {
-                    randomPick = subtitles.randomElement() ?? ""
+                    randomPick = subtitles.randomElement() ?? subtitle
                 }
 
                 subtitle = randomPick

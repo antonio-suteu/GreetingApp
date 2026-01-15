@@ -4,7 +4,7 @@ import SwiftUI
 /// The view applies a red background with adjustable opacity and a matching shadow.
 struct TextView: View {
     /// The text content to display.
-    let displayText: String
+    let displayText: LocalizedStringKey
     
     /// The opacity of the background color, ranging from 0.0 (transparent) to 1.0 (opaque).
     /// This value changes to 0 when the view is tapped, creating a fade-out effect.
