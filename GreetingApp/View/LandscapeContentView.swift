@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct LandscapeGreetingsView: View {
+struct LandscapeContentView: View {
     let messages: [DataItemModel] = [
         .init(
             text: "Greetings",
@@ -34,5 +34,5 @@ struct LandscapeGreetingsView: View {
 }
 
 #Preview {
-    LandscapeGreetingsView()
+    LandscapeContentView()
 }

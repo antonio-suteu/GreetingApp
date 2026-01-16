@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct GreetingsView: View {
+struct ContentView: View {
     let messages: [DataItemModel] = [
         .init(
             text: "Greetings",
@@ -33,5 +33,5 @@ struct GreetingsView: View {
 }
 
 #Preview {
-    GreetingsView()
+    ContentView()
 }
