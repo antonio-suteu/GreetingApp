@@ -1,13 +1,6 @@
-//
-//  ContentView.swift
-//  GreetingApp
-//
-//  Created by Antonio Suteu on 11/01/26.
-//
-
 import SwiftUI
 
-struct ContentView: View {
+struct GreetingsView: View {
     let messages: [DataItemModel] = [
         .init(
             text: "Greetings",
@@ -40,5 +33,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    GreetingsView()
 }

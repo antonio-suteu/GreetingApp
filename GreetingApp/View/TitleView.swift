@@ -20,62 +20,21 @@ import SwiftUI
 /// ```
 struct TitleView: View {
     // MARK: - State Properties
-    
     /// Tracks whether the face icon is in its original orientation or rotated 180 degrees.
     @State private var isRotated: Bool = true
-    
     /// The currently displayed subtitle text.
     @State private var subtitle: LocalizedStringKey = "— Exploring iOS Programming —"
     
-    /// A collection of possible subtitles that can be randomly selected.
-    let subtitles: [LocalizedStringKey] = [
-        "— Making napalm at home —",
-        "— Exploring the wilderness —",
-        "— Wearing socks with sandals —",
-        "— Feeling existential dread —",
-    ]
-
-    // MARK: - Computed Properties
-    
-    /// Returns the rotation angle based on the current rotation state.
-    ///
-    /// - Returns: `.zero` when not rotated, or 180 degrees when rotated.
-    var angle: Angle {
-        isRotated ? .zero : Angle.degrees(180)
-    }
-
-    // MARK: - Body
-    
     var body: some View {
         // Face icon that rotates when tapped
-        Image(systemName: "face.dashed")
-            .font(.system(size: 60))
-            .rotationEffect(angle)
-            .onTapGesture {
-                withAnimation {
-                    isRotated.toggle()
-                }
-            }
+        TitleIconView(isRotated: $isRotated)
 
         // Subtitle text that randomizes when tapped
-        Text(subtitle)
-            .fontWeight(.semibold)
-            .fontDesign(.monospaced)
-            .onTapGesture {
-                // Select a random subtitle that's different from the current one
-                var randomPick: LocalizedStringKey = subtitles.randomElement() ?? subtitle
-                while randomPick == subtitle {
-                    randomPick = subtitles.randomElement() ?? subtitle
-                }
-
-                subtitle = randomPick
-            }
-            .padding()
+        TitleTextView(subtitle: $subtitle)
     }
 }
 
 // MARK: - Previews
-
 #Preview {
     TitleView()
 }
