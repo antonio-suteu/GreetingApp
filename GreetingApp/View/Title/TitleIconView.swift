@@ -10,6 +10,13 @@ struct TitleIconView: View {
     var angle: Angle {
         isRotated ? .zero : Angle.degrees(180)
     }
+    
+    // Device orientation information for conditional layout and styling.
+    @Environment(\.deviceOrientation) var deviceOrientation
+
+    var iconSize: CGFloat {
+        deviceOrientation.isTablet ? 120 : 60
+    }
 
     var body: some View {
         // Face icon that rotates when tapped

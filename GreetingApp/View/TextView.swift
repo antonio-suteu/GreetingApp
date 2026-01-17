@@ -5,14 +5,20 @@ import SwiftUI
 struct TextView: View {
     /// The text content to display.
     let displayText: LocalizedStringKey
-    
+
     /// The opacity of the background color, ranging from 0.0 (transparent) to 1.0 (opaque).
     /// This value changes to 0 when the view is tapped, creating a fade-out effect.
     @State var colorOpacity: Double
 
+    // Device orientation information for conditional layout and styling.
+    @Environment(\.deviceOrientation) var deviceOrientation
+    var font: Font {
+        deviceOrientation.isTablet ? .largeTitle : .title
+    }
+
     var body: some View {
         Text(displayText)
-            .font(.largeTitle)
+            .font(font)
             .fontWeight(.thin)
             .padding()
             .background(.myRed.opacity(colorOpacity))

@@ -13,10 +13,19 @@ struct TitleTextView: View {
         "— Feeling existential dread —",
     ]
 
+    // Device orientation information for conditional layout and styling.
+    @Environment(\.deviceOrientation) var deviceOrientation
+
+    var font: Font {
+        deviceOrientation.isTablet ? .title2 : .body
+    }
+    
+    
     var body: some View {
         // Subtitle text that randomizes when tapped
         Text(subtitle)
             .fontWeight(.semibold)
+            .font(font)
             .fontDesign(.monospaced)
             .onTapGesture {
                 // Select a random subtitle that's different from the current one
