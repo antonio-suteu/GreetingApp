@@ -21,6 +21,8 @@ struct MainView: View {
             verticalSizeClass == .regular
     }
 
+    @Binding var language: String
+
     var body: some View {
         let orientation = DeviceOrientation(
             isPortraitPhone: isPortraitPhone,
@@ -28,20 +30,31 @@ struct MainView: View {
         )
 
         if isPortraitPhone || isTablet {
-            ContentView()
-                .environment(\.deviceOrientation, orientation)
+            NavigationStack {
+                ContentView()
+                    .environment(\.deviceOrientation, orientation)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            LanguagePickerView(language: $language)
+                        }
+                    }
+            }
+
         } else {
             // Landscape mode (iPhone) ?
-            LandscapeContentView()
-                .environment(\.deviceOrientation, orientation)
+            NavigationStack {
+                LandscapeContentView()
+                    .environment(\.deviceOrientation, orientation)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            LanguagePickerView(language: $language)
+                        }
+                    }
+            }
         }
     }
 }
 
 #Preview {
-    MainView()
-//    .environment(\.deviceOrientation, DeviceOrientation(
-//        isPortraitPhone: false,
-//        isTablet: true
-//    ))
+    MainView(language: .constant(Language.english.rawValue))
 }
