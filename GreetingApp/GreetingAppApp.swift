@@ -2,8 +2,9 @@ import SwiftUI
 
 @main
 struct GreetingAppApp: App {
-    @State private var language: String = Language.english.rawValue
-
+    @AppStorage("language") var language: String = Language.english.rawValue
+    
+    // computed property, it returns the layoutDirection from the selected language
     var layoutDirection: LayoutDirection {
         Language(rawValue: language)?.layoutDirection ?? .leftToRight
     }
