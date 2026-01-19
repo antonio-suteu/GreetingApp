@@ -1,4 +1,5 @@
 import SwiftUI
+import TipKit
 
 struct TitleTextView: View {
     // This binding allows to change the state of the parent view that uses this
@@ -20,6 +21,7 @@ struct TitleTextView: View {
         deviceOrientation.isTablet ? .title2 : .body
     }
     
+    private let greetingsTip = GreetingsTip()
     
     var body: some View {
         // Subtitle text that randomizes when tapped
@@ -37,6 +39,7 @@ struct TitleTextView: View {
                 subtitle = randomPick
             }
             .padding()
+            .popoverTip(greetingsTip)
     }
 }
 
