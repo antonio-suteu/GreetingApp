@@ -25,7 +25,7 @@ struct ContentView: View {
 
                 VStack(alignment: .leading, spacing: 25) {
                     MessagesView()
-                    GridView()
+                    // GridView()
                 }
                 .padding()
             }
