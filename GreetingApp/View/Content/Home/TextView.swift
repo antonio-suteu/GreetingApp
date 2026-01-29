@@ -30,7 +30,9 @@ struct TextView: View {
                 y: 10
             )
             .onTapGesture {
-                colorOpacity = 0
+                withAnimation {
+                    colorOpacity = 0
+                }
             }
     }
 }
