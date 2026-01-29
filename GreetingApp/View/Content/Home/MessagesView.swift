@@ -5,7 +5,8 @@ import SwiftUI
 /// This view creates a vertical list of `TextView` instances, each displaying
 /// a different message with varying background opacity levels.
 struct MessagesView: View {
-    /// The collection of messages to display, each containing text and opacity settings.
+  
+    // sample data
     let messages: [DataItemModel] = [
         .init(
             text: "Greetings",

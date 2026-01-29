@@ -21,6 +21,9 @@ struct ContentView: View {
             Tab("Home", systemImage: "house.circle.fill") {
                 HomeView()
             }
+            Tab("People", systemImage: "person.2.circle.fill") {
+                PeopleView()
+            }
             // .badge(2)
         }
     }

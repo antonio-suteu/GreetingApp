@@ -220,6 +220,9 @@
       "extractionState" : "manual",
       "shouldTranslate" : false
     },
+    "People" : {
+
+    },
     "Today's a great day!" : {
       "localizations" : {
         "ar" : {
