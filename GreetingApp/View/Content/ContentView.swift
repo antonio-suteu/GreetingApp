@@ -11,24 +11,17 @@ struct ContentView: View {
             colorOpacity: 0.4
         ),
         .init(
-            text: "End my suffering.",
+            text: "End my suffering",
             colorOpacity: 0.5
         ),
     ]
 
     var body: some View {
-        ZStack {
-            BackgroundView()
-
-            VStack (spacing: 20){
-                TitleView()
-
-                VStack(alignment: .leading, spacing: 25) {
-                    MessagesView()
-                    // GridView()
-                }
-                .padding()
+        TabView {
+            Tab("Home", systemImage: "house.circle.fill") {
+                HomeView()
             }
+            // .badge(2)
         }
     }
 }

@@ -154,6 +154,9 @@
     "Click here to generate random text" : {
 
     },
+    "End my suffering" : {
+
+    },
     "End my suffering." : {
       "localizations" : {
         "ar" : {
@@ -209,6 +212,9 @@
           }
         }
       }
+    },
+    "Home" : {
+
     },
     "Key" : {
       "extractionState" : "manual",
