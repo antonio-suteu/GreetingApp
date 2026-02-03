@@ -208,6 +208,24 @@
         }
       }
     },
+    "Bottom" : {
+
+    },
+    "Bottom Left" : {
+
+    },
+    "Bottom Right" : {
+
+    },
+    "Center" : {
+
+    },
+    "Center Left" : {
+
+    },
+    "Center Right" : {
+
+    },
     "Click here to generate random text" : {
       "localizations" : {
         "ar" : {
@@ -320,6 +338,9 @@
         }
       }
     },
+    "Get news" : {
+
+    },
     "Greetings" : {
       "localizations" : {
         "ar" : {
@@ -379,6 +400,15 @@
     "Key" : {
       "extractionState" : "manual",
       "shouldTranslate" : false
+    },
+    "Loading..." : {
+
+    },
+    "News" : {
+
+    },
+    "Okay" : {
+
     },
     "People" : {
       "localizations" : {
@@ -463,6 +493,15 @@
           }
         }
       }
+    },
+    "Top Center" : {
+
+    },
+    "Top Left" : {
+
+    },
+    "Top Right" : {
+
     }
   },
   "version" : "1.1"

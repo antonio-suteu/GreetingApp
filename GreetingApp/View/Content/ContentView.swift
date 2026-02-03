@@ -24,7 +24,10 @@ struct ContentView: View {
             Tab("People", systemImage: "person.2.circle.fill") {
                 PeopleView()
             }
-            // .badge(2)
+            Tab("News", systemImage: "newspaper.circle.fill") {
+                NewsView()
+            }
+           
         }
     }
 }
