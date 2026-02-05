@@ -338,9 +338,6 @@
         }
       }
     },
-    "Get news" : {
-
-    },
     "Greetings" : {
       "localizations" : {
         "ar" : {
@@ -495,6 +492,9 @@
       }
     },
     "Top Center" : {
+
+    },
+    "Top Headlines" : {
 
     },
     "Top Left" : {
